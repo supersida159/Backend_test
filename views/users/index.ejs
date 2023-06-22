@@ -1,0 +1,27 @@
+<!-- 
+
+        //- h1 User 
+        //- form(action="/users/search",method="GET")
+        //- input(type="text",name="p")
+        //- button Search
+        //- ul
+        //-   each val in users
+        //-      li
+        //-             span="hello " + val.name + " your age is:"+ val.age
+        //-             a(href='/users/'+val.id) View detail
+        //- a(href='/users/create') Create new user -->
+<main>
+        <h1>User Infor</h1>
+        <form action="/users/search",method="GET">
+        <input type="text",name="p">
+        <button>search</button>
+        <ul>
+                <li>
+                        <% users.forEach(function(user){ %>
+                                <li><%= user.name %> <a href='<%= "/users/"+user.id %>'>View detal</a></li>
+                              <% }); %>
+                </li>
+        </ul>
+</form>
+<a href="/users/create"><button type="button" >Create New User</button></a>
+</main>
